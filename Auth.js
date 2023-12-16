@@ -3,12 +3,13 @@ const{verify}=pkg;
 
 export default async function Auth(req, res, next) {
     try {
-        const key = req.headers.authorization;///main
+        console.log(req.headers.authorisation);
+        const key = req.headers.authorisation;///main
         if (!key) return res.status(404).send("Unauthorised access");
         const token = key.split(" ")[1];
         console.log(token);
         const auth = await verify(token,process.env.JWT_KEY);
-        // console.log(auth);
+        console.log("Auth",auth);
         req.user = auth
         next();
     } catch (error) {

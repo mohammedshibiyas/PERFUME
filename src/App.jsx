@@ -6,6 +6,7 @@ import { BrowserRouter,Routes,Route } from 'react-router-dom'
 import Adminreg from './component/Admin/Adminreg'
 import Adminlogin from './component/Admin/Adminlogin/Adminlogin'
 import Adminhome from './component/Admin/Adminhome/Adminhome'
+import Forgotpassword from './component/Admin/Forgot password/Forgotpassword'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
             <Route path='/' Component={Adminreg}/>
             <Route path='/adminlogin' Component={Adminlogin}/>
             <Route path='/adminhome' Component={Adminhome}/>
+            <Route path='/adminforgetpwd' Component={Forgotpassword}/>
           </Routes>
       </BrowserRouter>
     </>
