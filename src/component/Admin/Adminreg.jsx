@@ -8,7 +8,6 @@ const Adminreg = () => {
 
    const navigate=useNavigate()
     const [val,setVal]=useState({
-      name:"",
       username:"",
       phone:"",
       password:"",
@@ -54,31 +53,32 @@ const Adminreg = () => {
 		</div>
 		<div class="modal__body">
 			<div class="input">
-				<label class="input__label">Username</label>
-				<input class="input__field" name='username' type="text" onChange={Getdata}/> 
+				{/* <label class="input__label">Username</label> */}
+				<input class="input__field" name='username' type="text" placeholder='Username' onChange={Getdata}/> 
 			</div>
 			<div class="input">
-								<label class="input__label">Email</label>
-                <input class="input__field" name='email' type="text" onChange={Getdata}/>
+								{/* <label class="input__label">Email</label> */}
+                <input class="input__field" name='email' type="text"  placeholder="Email" onChange={Getdata}/>
 			</div>
             <div class="input">
-								<label class="input__label">Phone</label>
-                <input class="input__field" name='phone' type="text" onChange={Getdata}/>
+								{/* <label class="input__label">Phone</label> */}
+                <input class="input__field" name='phone' type="text" placeholder='Phone' onChange={Getdata}/>
 			</div>
             <div class="input">
-				<label class="input__label">Password</label>
-				<input class="input__field" name='password' type="password" onChange={Getdata}/> 
+				{/* <label class="input__label">Password</label> */}
+				<input class="input__field" name='password' type="password" placeholder='Password' onChange={Getdata}/> 
 			</div>
 
             <div class="input">
-				<label class="input__label">Confirm Password</label>
-				<input class="input__field" name='confirmpwd' type="password" onChange={Getdata}/> 
+				{/* <label class="input__label">Confirm Password</label> */}
+				<input class="input__field" name='confirmpwd' placeholder='Confirm Password' type="password" onChange={Getdata}/> 
 			</div>
 		</div>
 		<div class="modal__footer">
-			<button class="button button--primary" onClick={registerData}>Create project</button>
+			<button class="button button--primary" onClick={registerData}>Register</button>
+     <span> Already have an account <Link to='/adminlogin'> <a>Login</a></Link></span>
 		</div>
-	</div>
+	</div> 
 </div>
     </div>
   )
