@@ -1,4 +1,5 @@
 import admin_schema from './admin.model.js'
+import category_schema from './category.model.js'
 import bcrypt from 'bcrypt'
 import pkg from 'jsonwebtoken'
 const {sign}=pkg
@@ -76,4 +77,24 @@ export async function home(req,res){
     const hashedPassword = await bcrypt.hash(password, 10);
     let task = await admin_schema.updateOne({ email }, { $set: { password: hashedPassword } });
     res.status(200).send(task);
+}
+
+// category
+
+export async function addCategory(req,res){
+
+    try {
+        const { category, about } = req.body;
+        console.log(category, about);
+        if (!(category && about)) {
+          return res.status(400).send("Fields are empty");
+        }
+        const task=await category_schema.create({ category, about });
+    
+        res.status(200).send(task);
+      } catch (error) {
+        console.error(error);
+        res.status(500).send("Internal Server Error");
+      }
+
 }

@@ -7,6 +7,7 @@ import Adminreg from './component/Admin/Adminreg'
 import Adminlogin from './component/Admin/Adminlogin/Adminlogin'
 import Adminhome from './component/Admin/Adminhome/Adminhome'
 import Forgotpassword from './component/Admin/Forgot password/Forgotpassword'
+import Addcategory from './component/Admin/Adminhome/Addcategory/Addcategory'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
             <Route path='/adminlogin' Component={Adminlogin}/>
             <Route path='/adminhome' Component={Adminhome}/>
             <Route path='/adminforgetpwd' Component={Forgotpassword}/>
+            <Route path='/addcategory' Component={Addcategory}/>
           </Routes>
       </BrowserRouter>
     </>

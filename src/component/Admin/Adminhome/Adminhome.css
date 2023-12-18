@@ -24,9 +24,10 @@ font-family: 'Poppins', sans-serif;
 
 }
 .admin-name a{
-    font-size: 20px;
+    font-size: 16px;
     text-decoration: none;
-    padding:10px 20px;
+    padding: 8px 20px;
+    /* padding:8px 20px; */
     margin-top: 10px;
     margin-left: 10px;
     border-radius: 10px;
@@ -34,14 +35,51 @@ font-family: 'Poppins', sans-serif;
     border: 2px solid rgb(173, 24, 76)  ;
 }
 .hero{
-    
+margin-top: 3%;
+display: flex;
 }
 .category{
-    width: 20%;
+    width: 18%;
     margin-left: 2%;
-    border-right: 2px solid rgb(173, 24, 76);
+    /* border-right: 2px solid rgb(173, 24, 76); */
     height: 300px;
 }
-.plane{
-    width: 75%;
+.category h3{
+    /* margin-left: 6%; */
+    text-align: center;
+
+}
+#category-btn{
+    margin-top: 4%;
+    width: 100%;
+    color: rgb(173, 24, 76);
+    border: 1.5px solid rgb(173, 24, 76);
+    border-radius: 5px;
+    background-color: white;
+}
+.category-table{
+    margin-top: 7%;
+    margin-left: 10px;
+}
+.category-table tr{
+    margin-top: 10px;
+}
+.tab-btns button{
+    margin-left: 15px;
+    background-color: rgb(173, 24, 76);
+    border: none;
+    color: white;
+    padding: 5px 10px;
+}
+.products{
+    width: 18%;
+    margin-left:4%;
+}
+.products h3{
+    text-align: center;
+}
+
+
+#about-inp{
+    height: 150px;
 }

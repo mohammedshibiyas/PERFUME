@@ -10,6 +10,9 @@ router.route("/adminlogin").post(controller.adminLogin);
 router.route("/home").get(Auth,controller.home);
 router.route("/forgotadmpwd").patch(controller.adminFrgtPwd);
 
+// category
+router.route("/addcategory").post(controller.addCategory)
+
 
 
 export default router;
