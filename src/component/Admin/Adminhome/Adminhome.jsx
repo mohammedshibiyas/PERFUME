@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
+import './Adminhome.css'
 import axios from 'axios';
 const Adminhome = () => {
 
@@ -20,7 +21,21 @@ console.log(value);
 
   return (
     <div>
-      admin:{msg}
+    <div className="admin-name">
+      <a href="">Back</a>
+    <h3> admin:{msg}</h3>
+    </div>
+
+    <div className="hero">
+      <div className="category">
+        <h3>Categories</h3>
+        <button>Add Category</button>
+      </div>
+      <div className="plane"></div>
+    </div>
+
+
+    
     </div>
   )
 }

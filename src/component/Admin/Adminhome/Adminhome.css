@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&family=Montserrat:wght@300&family=Poppins:wght@200;500&display=swap');
+
+body{
+    font-family: 'Josefin Sans', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Poppins', sans-serif;
+}
+
+.admin-name{
+    display: flex;
+    justify-content: space-between;
+}
+
+.admin-name h3{
+    text-align: end;
+    font-size: 20px;
+    padding:10px 40px;
+    margin-top: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    color:white;
+    background-color: rgb(173, 24, 76) ;
+    border: 2px solid ;
+
+}
+.admin-name a{
+    font-size: 20px;
+    text-decoration: none;
+    padding:10px 20px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 10px;
+    color:rgb(173, 24, 76) ;
+    border: 2px solid rgb(173, 24, 76)  ;
+}
+.hero{
+    
+}
+.category{
+    width: 20%;
+    margin-left: 2%;
+    border-right: 2px solid rgb(173, 24, 76);
+    height: 300px;
+}
+.plane{
+    width: 75%;
+}
