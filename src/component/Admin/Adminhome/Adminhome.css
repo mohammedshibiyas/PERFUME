@@ -32,7 +32,7 @@ font-family: 'Poppins', sans-serif;
     margin-left: 10px;
     border-radius: 10px;
     color:rgb(173, 24, 76) ;
-    border: 2px solid rgb(173, 24, 76)  ;
+    /* border: 2px solid rgb(173, 24, 76)  ; */
 }
 .hero{
 margin-top: 3%;

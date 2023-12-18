@@ -1,5 +1,6 @@
 import admin_schema from './admin.model.js'
 import category_schema from './category.model.js'
+import product_schema from './product.model.js'
 import bcrypt from 'bcrypt'
 import pkg from 'jsonwebtoken'
 const {sign}=pkg
@@ -90,6 +91,42 @@ export async function addCategory(req,res){
           return res.status(400).send("Fields are empty");
         }
         const task=await category_schema.create({ category, about });
+    
+        res.status(200).send(task);
+      } catch (error) {
+        console.error(error);
+        res.status(500).send("Internal Server Error");
+      }
+
+}
+
+export async function getCategory(req,res){ 
+    let task=await category_schema.find()
+    res.status(200).send(task)
+}
+
+export function delCategory(req,res)
+{
+    const{id}=req.params;
+    const data=category_schema.deleteOne({_id:id})
+    data.then((resp)=>{
+        res.status(200).send(resp)
+    }).catch((error)=>{
+        res.status(404).send(error)
+    })
+}
+
+// product
+
+export async function addProduct(req,res){
+
+    try {
+        const {name,category,description,price,photo,stock } = req.body;
+        console.log(name,category,description,price,photo,stock);
+        if (!(name&&category&&description&&price&&photo&&stock)) {
+          return res.status(400).send("Fields are empty");
+        }
+        const task=await product_schema.create({ name,category,description,price,photo,stock });
     
         res.status(200).send(task);
       } catch (error) {
