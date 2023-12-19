@@ -65,7 +65,8 @@ const Adminhome = () => {
           
           <tr key={index}>
           <th>{data.category}</th>
-          <td className='tab-btns'><button>EDIT</button>
+          <td className='tab-btns'>
+         <Link to={`/editcategory/${data._id}`}> <button >EDIT</button></Link>
           <Link to={`#${data._id}`}> <button onClick={()=>delCategory(data._id)}>DELETE</button></Link></td>
 
         </tr>
@@ -78,8 +79,8 @@ const Adminhome = () => {
       </div>
       <div className="products">
       <h3>Products</h3>
-      <button id='category-btn'> <i class="fa fa-plus-circle" aria-hidden="true"></i> Add Product</button>
-
+         <Link to='/addproduct'><button id='category-btn'> <i class="fa fa-plus-circle" aria-hidden="true"></i> Add Product</button>
+</Link>
 
       </div>
     </div>

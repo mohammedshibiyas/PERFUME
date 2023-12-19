@@ -116,10 +116,29 @@ export function delCategory(req,res)
     })
 }
 
+export async function EditCategory(req, res) {
+  const { id } = req.params;
+  try {
+      const updatedData = req.body;
+      const value = await category_schema.updateOne({ _id: id }, { $set: updatedData });
+      res.status(200).send(value);
+  } catch (error) {
+      res.status(404).send(error);
+  }
+}
+
+export async function getfullcategory(req,res){
+  const{id}=req.params;
+  console.log(id);
+  let task=await category_schema.findOne({_id:id})
+  console.log(task);
+  res.status(200).send(task)
+}
+
+
 // product
 
 export async function addProduct(req,res){
-
     try {
         const {name,category,description,price,photo,stock } = req.body;
         console.log(name,category,description,price,photo,stock);

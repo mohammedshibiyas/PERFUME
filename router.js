@@ -14,6 +14,8 @@ router.route("/forgotadmpwd").patch(controller.adminFrgtPwd);
 router.route("/addcategory").post(controller.addCategory);
 router.route("/getcategory").get(controller.getCategory);
 router.route("/delcategory/:id").delete(controller.delCategory);
+router.route("/editcategory/:id").patch(controller.EditCategory);
+router.route("/getdetails/:id").post(controller.getfullcategory)
 
 // product
 router.route("/addproduct").post(controller.addProduct);
