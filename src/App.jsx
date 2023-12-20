@@ -10,6 +10,7 @@ import Forgotpassword from './component/Admin/Forgot password/Forgotpassword'
 import Addcategory from './component/Admin/Adminhome/Addcategory/Addcategory'
 import Addproduct from './component/Admin/Adminhome/Addproduct/Addproduct'
 import Editcategory from './component/Admin/Adminhome/editcategory/Editcategory'
+import Home from './component/Home/Home'
 
 function App() {
 
@@ -17,13 +18,14 @@ function App() {
     <>
       <BrowserRouter>
           <Routes>
-            <Route path='/' Component={Adminreg}/>
+            <Route path='/adminregister' Component={Adminreg}/>
             <Route path='/adminlogin' Component={Adminlogin}/>
             <Route path='/adminhome' Component={Adminhome}/>
             <Route path='/adminforgetpwd' Component={Forgotpassword}/>
             <Route path='/addcategory' Component={Addcategory}/>
             <Route path='/addproduct' Component={Addproduct}/>
             <Route path='/editcategory/:id' Component={Editcategory}/>
+            <Route path='/' Component={Home}/>
           </Routes>
       </BrowserRouter>
     </>
