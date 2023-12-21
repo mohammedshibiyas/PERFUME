@@ -224,7 +224,7 @@ const Home = () => {
       <div className="footer">
         <h2>chanel</h2>
           <div className="row roo">
-            <div className="col-lg-3 col-1">
+            <div className="col-lg-3 col-sm-12 col-1">
               <h5>explore chanel.com</h5>
             <div className="links">
             <div> <a href="">Houte Couture</a></div>
@@ -240,7 +240,7 @@ const Home = () => {
               <div><a href="">Sitemap</a></div>
             </div>
             </div>
-            <div className="col-lg-3  col-1">
+            <div className="col-lg-3 col-sm-12 col-1">
             <h5>Online services</h5>
             <div className="links">
             <div> <a href="">Payment Methods</a></div>
@@ -253,7 +253,7 @@ const Home = () => {
             </div>
 
             </div>
-            <div className="col-lg-3  col-1">
+            <div className="col-lg-3 col-sm-12 col-1">
             <h5>boutique services</h5>
             <div className="links">
             <div> <a href="">Store Locator</a></div>
@@ -262,7 +262,7 @@ const Home = () => {
             </div>
 
             </div>
-            <div className="col-lg-3  col-1">
+            <div className="col-lg-3 col-sm-12  col-1">
             <h5>the house of chanel</h5>
             <div className="links">
             <div> <a href="">Careers</a></div>
