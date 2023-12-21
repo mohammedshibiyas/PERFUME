@@ -56,11 +56,22 @@ const Home = () => {
         <button>shop now</button>
       </div>
     </div>
-    <div class="carousel-item">
+    <div class="carousel-item main-image">
       <img src="/carosel2.webp" class="d-block w-100" alt="..."/>
+      <div className="image-details">
+        <h6>fragrances</h6>
+        <h4>give wonder,give chanel</h4>
+        <p>Explore a selection of fragrence gift for holidays.</p>
+        <button>shop now</button>
+      </div>
     </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="..."/>
+    <div class="carousel-item main-image">
+      <img src="/blue banner.jpg" class="d-block w-100" alt="..."/>
+      <div className="image-details">
+        <h6>fragrance</h6>
+        <h4>bleu de chanel</h4>
+        <button>shop now</button>
+      </div>
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

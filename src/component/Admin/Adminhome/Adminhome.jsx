@@ -48,7 +48,7 @@ const Adminhome = () => {
   return (
     <div>
      <div className="main">
-     <nav className="navbar">
+     <nav className="navbars">
         <div className="nav_icon" onclick="">
           <i className="fa fa-bars" aria-hidden="true"></i>
         </div>
