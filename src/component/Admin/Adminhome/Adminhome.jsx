@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
-import './Adminhome.css'
-import { Link, useParams } from 'react-router-dom'
+import './Adminhome.scss'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 
 import axios from 'axios';
 const Adminhome = () => {
+  const navigate=useNavigate();
   // const {id}=useParams()
   const [getCat,setCat]=useState([])
   const getCategory=async()=>{
@@ -15,19 +16,42 @@ const Adminhome = () => {
     getCategory()
   },[])
 
- const delCategory=async(id)=>{
-  // e.preventDefault();
-  const res= await axios.delete(`http://localhost:4007/perfume/delcategory/${id}`)
-  console.log(res.data);
-  if(res.status!=404)
-  {
-    alert("category deleted")
-  }
-  else{
-    alert("not deleted")
-  }
-  getCategory();
- } 
+
+  const Logout=(e)=>{
+    e.preventDefault();
+    const confirmed = window.confirm("Are you sure you want to logout?");
+    if (confirmed) {
+        localStorage.clear();
+       navigate("/adminlogin")
+    }
+}
+
+
+  const deletecategory = async (id) => {
+    // Display a confirmation dialog before making the delete request
+    const userConfirmed = window.confirm("Are you sure you want to delete this category?");
+  
+    if (userConfirmed) {
+      try {
+        const res = await axios.delete(`http://localhost:4007/perfume/delcategory/${id}`);
+        console.log(res.data);
+  
+        if (res.status !== 404) {
+          alert("Category deleted successfully");
+        } else {
+          alert("Category not deleted");
+        }
+  
+        // Refresh the category list after deletion
+        getCategory();
+      } catch (error) {
+        console.error("Error deleting category:", error);
+        alert("An error occurred while deleting the category");
+      }
+    } else {
+      alert("Deletion canceled by user");
+    }
+  }; 
 
   const [msg, setmsg] = useState("");
   const value=JSON.parse(localStorage.getItem("admin_token"));
@@ -47,100 +71,75 @@ const Adminhome = () => {
 
   return (
     <div>
-     <div className="main">
-     <nav className="navbars">
-        <div className="nav_icon" onclick="">
-          <i className="fa fa-bars" aria-hidden="true"></i>
-        </div>
-        <div className="navbar__left">
-         
-          <a className="active_link" href="#">Admin</a>
-        </div>
-        <div className="navbar__right">
-          <a href="#">
-            <i className="fa fa-power-off" aria-hidden="true" id="log"> <span> LOGOUT</span></i>
-          </a>
-         
-          <a href="#">
-            <img width="30" src="/avatar.svg" alt="" />
-            {msg}
-          </a>
-        </div>
-      </nav>
-
-      <main>
-        <div className="main__container">
-
-           {/* <div className="main__title">
-            <img src="assets/hello.svg" alt="" />
-            <div className="main__greeting">
-              <h1>Hello Codersbite</h1>
-              <p>Welcome to your admin dashboard</p>
+       <div className="admin-home">
+       <div className="main">
+          <div className="sidebar">
+            <div className="back">
+              <button><i class="fa fa-arrow-left" aria-hidden="true"></i> back</button>
             </div>
-          </div>  */}
+            <div className="sidebar-content">
+              {/* <h2>Chanel</h2> */}
+              <div className="categories">
+              <h6>Categories</h6>
 
-         
-          <div className="main__cards">
-          
-          </div> 
-         
-          <div className="charts">
-                     </div> 
-        </div>
-      </main>
-
-      <div id="sidebar">
-        <div className="sidebar__title">
-          <div className="sidebar__img">
-            <img src="/ChanellogoPNGimage.png" alt="logo" />
-            <h1>CHANEL</h1>
-          </div>
-         
-        </div>
-
-        <div className="sidebar__menu">
-          <div className=" category-main  active_menu_link sidebar__linkk">
-          <div className="cat-head">
-            <i className=""></i>
-            <h4>Categories</h4>
-          </div>
-          <Link to='/addcategory'> <button id='category-btn'> <i className="fa fa-plus" aria-hidden="true" id="plus"></i> </button>
-          </Link>
-          </div>
-
-          <table className='category-table'>
-         
-            {
-             getCat.map((data,index)=>
-             
-             <tr key={index} className='active_menu_link'>
-             <th>{data.category}</th>
-             <td className='tab-btns'>
-            <Link to={`/editcategory/${data._id}`}><i class="fa fa-pencil-square-o" aria-hidden="true" id='edit'></i>
+               <div className="tables">
+               <table className='category-table'>
+      
+      {
+       getCat.map((data,index)=>
+       
+      
+         <tr key={index} className='active_menu_link'>
+      <Link className='cat-link'> <th>{data.category}</th></Link>
+       <td className='tab-btns'>
+      <Link to={`/editcategory/${data._id}`}><i class="fa fa-pencil-square-o" aria-hidden="true" id='edit'></i>
 </Link>
-           <Link to={`#${data._id}`} ><button onclick={()=>delCategory(data._id)}><i class="fa fa-trash" aria-hidden="true"></i>
-           </button>
-</Link>
-             </td>
    
-           </tr>
-          //  onclick={()=>delCategory(data._id)}
-             
-             )
-            }
-   
-            
-           </table>
-           {/* <h2>MNG</h2>
-          <div className="sidebar__link ">
-            <i className="fa fa-user-secret" aria-hidden="true"></i>
-            <a href="#">Admin Management</a>
-          </div> */}
-          
-      </div>
-      </div>
+              <Link className='delete-btn'  to={`#${data._id}`} onClick={() => deletecategory(data._id)}><i class="fa fa-trash" aria-hidden="true"></i></Link>
+
+       </td>
+
+     </tr>
+      
+       
+       )
+      }
+
+      
+     </table>
+               </div>
+              </div>
+            </div>
+
+          </div>
+          <div className="display-side">
+          <div className="navbar">
+          <h5><i class="fa fa-cog" aria-hidden="true"></i> ADMIN PANEL</h5>
+          <div className="nav-content">
+          <div className="navbar__right">
+       <a href="#" id='log'>
+        <Link onClick={Logout} className='logout'> <i className="fa fa-power-off" aria-hidden="true" id="log"> <span> LOGOUT</span></i></Link>
+       </a>
+      
+      <span> <a href="#" id='msg'>
+         <img width="30" src="/avatar.svg" alt="" />
+        <span id='admin-name'> {msg}</span>
+       </a></span>
      </div>
-    
+          </div>
+        </div>
+
+          <div className="add-cat">
+            <Link to={`/addcategory`}><button id='cat-btn'>Add Category < i class="fa fa-plus" aria-hidden="true"></i></button></Link>
+            <Link to={`/addproduct`}><button id='pro-btn'>Add Product < i class="fa fa-plus" aria-hidden="true"></i></button></Link>
+            <Link to={``}><button id='sale-btn'>Sales < i class="fa fa-line-chart" aria-hidden="true"></i></button></Link>
+            <Link to={``}><button id='cust-btn'>Customers < i class="fa fa-users" aria-hidden="true"></i></button></Link>
+          </div>
+
+          </div>
+        </div>
+       </div>
+       
     </div>
   )
 }

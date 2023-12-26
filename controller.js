@@ -1,6 +1,7 @@
-import admin_schema from './admin.model.js'
-import category_schema from './category.model.js'
-import product_schema from './product.model.js'
+import admin_schema from './model/admin.model.js'
+import category_schema from './model/category.model.js'
+import product_schema from './model/product.model.js'
+import customer_schema from './model/customer.model.js'
 import bcrypt from 'bcrypt'
 import pkg from 'jsonwebtoken'
 const {sign}=pkg
@@ -138,19 +139,65 @@ export async function getfullcategory(req,res){
 
 // product
 
-export async function addProduct(req,res){
-    try {
-        const {name,category,description,price,photo,stock } = req.body;
-        console.log(name,category,description,price,photo,stock);
-        if (!(name&&category&&description&&price&&photo&&stock)) {
-          return res.status(400).send("Fields are empty");
-        }
-        const task=await product_schema.create({ name,category,description,price,photo,stock });
-    
-        res.status(200).send(task);
-      } catch (error) {
-        console.error(error);
-        res.status(500).send("Internal Server Error");
-      }
+export async function AddProducts(req, res) {
+  try {
+    // console.log(req.files);
+    const images=req.files;
+    console.log(images);
+    const { name,category,description,price,stokes} = req.body;
+    const task=await product_schema.create({name,category,description,price,stokes,images});
+    console.log(task);
+    res.status(200).send({result : task});
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Internal Server Error");
+  }
+}
+export async function SetPath(req,res)
+{
+  let { filename } = req.params;
+  console.log(filename);
+  return res.sendFile(path.resolve(`./images/${filename}`))
+}
 
+export async function getcategorywise(req,res){
+ try {
+  const {category}=req.params;
+  const product=await product_schema.find({category:category});
+
+  res.status(200).send(product)
+ } catch (error) {
+  res.status(500).send("internal server error")
+ }
+
+}
+// customer
+
+export async function addCustomer(req,res){
+  const {password,...custDetails}=req.body
+  const hashedpwd=await bcrypt.hash(password,10)
+  customer_schema.create({...custDetails,password:hashedpwd})
+   res.status(200).send("succesfully registered")
+
+}
+export async function loginCustomer(req,res){
+  try {
+    console.log(req.body);
+    const { email, password } = req.body;
+    const usr = await customer_schema.findOne({ email })
+    console.log(usr);
+    if (usr === null) return res.status(404).send("username or password doesnot exist");
+    const success =await bcrypt.compare(password, usr.password)
+    console.log(success);
+    const{username}=usr
+    if (success !== true) return res.status(404).send("username or password doesnot exist");
+    const token = await sign({ username }, process.env.JWT_KEY, { expiresIn: "24h" })
+    console.log(username);
+    console.log(token);
+    res.status(200).send({ msg: "successfullly login", token })
+    res.end();
+    
+   } catch (error) {
+    console.log(error); 
+}
 }

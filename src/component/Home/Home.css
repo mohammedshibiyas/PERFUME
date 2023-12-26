@@ -1,7 +1,7 @@
 @import url(https://db.onlinewebfonts.com/c/5fd740bac1abfb826fb7e35ae963efc9?family=ABChanel+Corpo+Regular);
 
 body{
-    font-family: abchanel-corpo,Arial,Helvetica,sans-serif;
+    /* font-family: abchanel-corpo,Arial,Helvetica,sans-serif; */
 
 }
 .navbar{
@@ -40,6 +40,9 @@ body{
 }
 .main-image{
     position: relative;
+}
+.main-image img{
+    height: 100vh;
 }
 .image-details{
     position: absolute;

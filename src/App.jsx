@@ -1,6 +1,4 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
 import Adminreg from './component/Admin/Adminreg'
@@ -11,6 +9,8 @@ import Addcategory from './component/Admin/Adminhome/Addcategory/Addcategory'
 import Addproduct from './component/Admin/Adminhome/Addproduct/Addproduct'
 import Editcategory from './component/Admin/Adminhome/editcategory/Editcategory'
 import Home from './component/Home/Home'
+import Categoryproduct from './component/category-vise/Categoryproduct'
+import Addcustomer from './component/User/Addcustomer'
 
 function App() {
 
@@ -26,6 +26,8 @@ function App() {
             <Route path='/addproduct' Component={Addproduct}/>
             <Route path='/editcategory/:id' Component={Editcategory}/>
             <Route path='/' Component={Home}/>
+            <Route path='/categoryproduct' Component={Categoryproduct}/>
+            <Route path='/addcustomer' Component={Addcustomer}/>
           </Routes>
       </BrowserRouter>
     </>

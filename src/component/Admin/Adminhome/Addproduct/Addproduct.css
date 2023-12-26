@@ -41,12 +41,14 @@ font-family: 'Poppins', sans-serif;
     padding: 1rem 1.5rem;
     border-bottom: 1px solid #ddd;
     display: flex;
+    margin-top: 25%;
     align-items: center;
     justify-content: space-between;
   }
   
   .modal__body {
     padding: 1rem 1rem;
+    width: 100%;
   }
   
   .modal__footer {

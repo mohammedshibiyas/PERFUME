@@ -1,10 +1,12 @@
 import React from 'react'
-import './Home.css'
+// import './Home.css'
+import './Home.scss'
 import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
     <div>
+      <div className="all">
       <div className="navbar">
         <div className="row upper">
           <div className="col-lg-4 right-nav"></div>
@@ -216,7 +218,7 @@ const Home = () => {
             <a href="">learn more</a>
           </div>
         </div>
-      </div>
+      </div>  
 
 
       {/* footer */}
@@ -291,9 +293,10 @@ const Home = () => {
 
           </div>
 
-
+    
       </div>
 
+   </div>
    </div>
     </div>
   )
