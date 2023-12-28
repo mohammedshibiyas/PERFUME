@@ -11,6 +11,7 @@ import Editcategory from './component/Admin/Adminhome/editcategory/Editcategory'
 import Home from './component/Home/Home'
 import Categoryproduct from './component/category-vise/Categoryproduct'
 import Addcustomer from './component/User/Addcustomer'
+import Logincustomer from './component/User/Logincustomer'
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
             <Route path='/' Component={Home}/>
             <Route path='/categoryproduct/:category' Component={Categoryproduct}/>
             <Route path='/addcustomer' Component={Addcustomer}/>
+            <Route path='/logincustomer' Component={Logincustomer}/>
           </Routes>
       </BrowserRouter>
     </>
