@@ -53,19 +53,19 @@ const Adminhome = () => {
     }
   }; 
 
-  const [msg, setmsg] = useState("");
-  const value=JSON.parse(localStorage.getItem("admin_token"));
-// console.log(value);
-  const getName=async()=>{
-    const res=await axios.get("http://localhost:4007/perfume/home",{
-      headers:{Authorisation:`Bearer ${value}`},
+    const [msg, setmsg] = useState("");
+    const value=JSON.parse(localStorage.getItem("admin_token"));
+  // console.log(value);
+    const getName=async()=>{
+      const res=await axios.get("http://localhost:4007/perfume/home",{
+        headers:{Authorisation:`Bearer ${value}`},
 
-    })
-    setmsg(res.data.msg)
-  }
-  useEffect(()=>{
-    getName();
-  },[])
+      })
+      setmsg(res.data.msg)
+    }
+    useEffect(()=>{
+      getName();
+    },[])
 
 
 

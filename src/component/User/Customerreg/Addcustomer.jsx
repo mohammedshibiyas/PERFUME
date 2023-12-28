@@ -106,7 +106,7 @@ const Addcustomer = () => {
           </div>
          <div className="reg-btn">
          <Link className='register-btn' onClick={registerCustomer}>Register</Link>
-         <p id='already'>already have an acc? <Link className='log'>Login</Link></p>
+         <p id='already'>already have an acc? <Link className='log' to='/logincustomer'>Login</Link></p>
          </div>
         </div>
       </div>

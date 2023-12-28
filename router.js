@@ -1,6 +1,7 @@
 import { Router } from "express";
 import * as controller from './controller.js'
 import Auth from "./Auth.js";
+import Autha from "./Autha.js";
 import multer from "multer";
 
 
@@ -36,6 +37,7 @@ router.route('/delproduct/:id').delete(controller.delproduct)
 // customer
 router.route('/addcustomer').post(controller.addCustomer)
 router.route('/logincustomer').post(controller.loginCustomer)
+router.route('/customerhome').get(Autha,controller.customerHome)
 
 
 export default router;

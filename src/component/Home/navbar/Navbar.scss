@@ -1,0 +1,63 @@
+.nav-all{
+    .navbar{
+        height: 150px;
+        box-shadow: 0px 4px 5px 1px rgba(0,0,0,0.75);
+        box-shadow: 0px 4px 5px 2px rgba(0,0,0,0.75);
+    }
+    
+    .upper{
+        width: 100%;
+        
+    }
+    .left-nav h3{
+        font-weight: 800;
+        font-family:"ABChanel Corpo Regular" ;
+        letter-spacing: 2px;
+        padding-left: 19%;
+        
+    }
+    .right-nav{
+    }
+    .left-nav{
+        display: flex;
+       
+        justify-content: space-between;
+    }
+    .icons{
+        margin-right: 8%;
+        padding-top: 4%;
+    }
+    .icon{
+        color: black;
+        text-decoration: none;
+    }
+    .icons svg{
+        margin-right: 18px;
+       
+    }
+    .lower{
+        width: 100%;
+        text-align: center;
+    }
+    .lower a{
+        color: rgba(0, 0, 0, 0.848);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 12px;
+        font-family:"ABChanel Corpo Regular";
+        margin-left: 30px;
+    }
+    .lower a:hover{
+        border-bottom: 3px solid black;  
+    }
+    .msg{
+        padding-bottom: 2%;
+        padding-right: 5%;
+        width: 100%;
+       
+        text-align: end;
+    }
+    .msg span{
+        color: red;
+    }
+}

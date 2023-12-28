@@ -44,6 +44,7 @@ export async function adminLogin(req, res) {
      const success =await bcrypt.compare(password, usr.password)
      console.log(success);
      const{username}=usr
+     console.log("hai",usr);
      if (success !== true) return res.status(404).send("username or password doesnot exist");
      const token = await sign({ username }, process.env.JWT_KEY, { expiresIn: "24h" })
      console.log(username);
@@ -192,19 +193,38 @@ export async function loginCustomer(req,res){
     console.log(req.body);
     const { email, password } = req.body;
     const usr = await customer_schema.findOne({ email })
-    console.log(usr);
+    console.log("haii",usr);
     if (usr === null) return res.status(404).send("username or password doesnot exist");
     const success =await bcrypt.compare(password, usr.password)
     console.log(success);
-    const{username}=usr
+    const{name,_id}=usr
+    console.log("hai",usr);
     if (success !== true) return res.status(404).send("username or password doesnot exist");
-    const token = await sign({ username }, process.env.JWT_KEY, { expiresIn: "24h" })
-    console.log(username);
+    const token = await sign({ name,_id }, process.env.JWT_KEY, { expiresIn: "24h" })
+    console.log(name);
     console.log(token);
     res.status(200).send({ msg: "successfullly login", token })
     res.end();
     
    } catch (error) {
-    console.log(error); 
+    console.log(error,"internal server error"); 
 }
+}
+
+export async function customerHome(req,res)
+{
+  try {
+    console.log(req.user);
+    
+
+    const {name}=req.user
+    console.log(name);
+  //   console.log(username);
+    res.status(200).send({msg:` ${name}`})
+  res.end()
+    
+  } catch (error) {
+    res.status(404).send(error)
+    
+  }
 }

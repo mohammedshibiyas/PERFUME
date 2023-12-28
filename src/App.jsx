@@ -10,8 +10,8 @@ import Addproduct from './component/Admin/Adminhome/Addproduct/Addproduct'
 import Editcategory from './component/Admin/Adminhome/editcategory/Editcategory'
 import Home from './component/Home/Home'
 import Categoryproduct from './component/category-vise/Categoryproduct'
-import Addcustomer from './component/User/Addcustomer'
-import Logincustomer from './component/User/Logincustomer'
+import Addcustomer from './component/User/Customerreg/Addcustomer'
+import Logincustomer from './component/User/Logincust/Logincustomer'
 
 function App() {
 
