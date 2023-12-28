@@ -75,7 +75,7 @@ const Adminhome = () => {
        <div className="main">
           <div className="sidebar">
             <div className="back">
-              <button><i class="fa fa-arrow-left" aria-hidden="true"></i> back</button>
+              <Link to='/adminlogin'><button><i class="fa fa-arrow-left" aria-hidden="true"></i> back</button></Link>
             </div>
             <div className="sidebar-content">
               {/* <h2>Chanel</h2> */}
@@ -90,7 +90,7 @@ const Adminhome = () => {
        
       
          <tr key={index} className='active_menu_link'>
-      <Link className='cat-link'> <th>{data.category}</th></Link>
+      <Link className='cat-link' to={`/categoryproduct/${data.category}`}><th>{data.category}</th></Link>
        <td className='tab-btns'>
       <Link to={`/editcategory/${data._id}`}><i class="fa fa-pencil-square-o" aria-hidden="true" id='edit'></i>
 </Link>

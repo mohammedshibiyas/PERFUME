@@ -26,7 +26,7 @@ function App() {
             <Route path='/addproduct' Component={Addproduct}/>
             <Route path='/editcategory/:id' Component={Editcategory}/>
             <Route path='/' Component={Home}/>
-            <Route path='/categoryproduct' Component={Categoryproduct}/>
+            <Route path='/categoryproduct/:category' Component={Categoryproduct}/>
             <Route path='/addcustomer' Component={Addcustomer}/>
           </Routes>
       </BrowserRouter>

@@ -141,11 +141,9 @@ export async function getfullcategory(req,res){
 
 export async function AddProducts(req, res) {
   try {
-    // console.log(req.files);
-    const images=req.files;
-    console.log(images);
-    const { name,category,description,price,stokes} = req.body;
-    const task=await product_schema.create({name,category,description,price,stokes,images});
+    
+    const { ...products} = req.body;
+    const task=await product_schema.create({...products});
     console.log(task);
     res.status(200).send({result : task});
   } catch (error) {
@@ -153,12 +151,12 @@ export async function AddProducts(req, res) {
     res.status(500).send("Internal Server Error");
   }
 }
-export async function SetPath(req,res)
-{
-  let { filename } = req.params;
-  console.log(filename);
-  return res.sendFile(path.resolve(`./images/${filename}`))
-}
+// export async function SetPath(req,res)
+// {
+//   let { filename } = req.params;
+//   console.log(filename);
+//   return res.sendFile(path.resolve(`./images/${filename}`))
+// }
 
 export async function getcategorywise(req,res){
  try {
@@ -169,7 +167,16 @@ export async function getcategorywise(req,res){
  } catch (error) {
   res.status(500).send("internal server error")
  }
+}
 
+export async function delproduct(req,res){
+  const{id}=req.params;
+  const data=product_schema.deleteOne({_id:id})
+  data.then((resp)=>{
+      res.status(200).send(resp)
+  }).catch((error)=>{
+      res.status(404).send(error)
+  })
 }
 // customer
 

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&family=Montserrat:wght@300&family=Poppins:wght@200;500&display=swap');
 
-body{
+.add-product{
+  body{
 
     font-family: 'Josefin Sans', sans-serif;
 font-family: 'Montserrat', sans-serif;
@@ -90,7 +91,7 @@ font-family: 'Poppins', sans-serif;
   }
   
   .button--primary {
-    background-color: rgb(173, 24, 76);
+    background-color: rgba(0, 0, 0, 0.744);
     color: #FFF;
     padding: 0.75rem 1.25rem;
     border-radius: 0.25rem;
@@ -128,7 +129,7 @@ font-family: 'Poppins', sans-serif;
   .input__field:focus {
     outline: none;
     border-color: #007dab;
-    box-shadow: 0 0 0 1px, 0 0 0 4px rgb(173, 24, 76);
+    box-shadow: 0 0 0 1px, 0 0 0 4px rgba(0, 0, 0, 0.599);
   }
   
   .input__field--textarea {
@@ -147,3 +148,4 @@ font-family: 'Poppins', sans-serif;
     font-family: 'Poppins', sans-serif;
     color: rgba(0, 0, 0, 0.856);
   }
+}
