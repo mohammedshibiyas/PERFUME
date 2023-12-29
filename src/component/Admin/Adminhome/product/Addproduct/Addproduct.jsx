@@ -12,6 +12,7 @@ const Addproduct = () => {
   const [val, setVal] = useState({
     name: "",
     category: "",
+    title:"",
     description: "",
     price: "",
     stock: "",
@@ -151,10 +152,14 @@ const Addproduct = () => {
                 </select>
 
               </div>
+              <div class="input">
+                {/* <label class="input__label">Password</label> */}
+                <input class="input__field" name='title' type="text" placeholder='title' onChange={Getdata} id='titlee' />
+              </div>
 
               <div class="input">
                 {/* <label class="input__label">Password</label> */}
-                <input class="input__field" name='description' type="text" placeholder='description' onChange={Getdata} />
+                <input class="input__field" name='description' type="text" placeholder='description' onChange={Getdata} id='descript' />
               </div>
 
               <div class="input">

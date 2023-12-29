@@ -33,6 +33,7 @@ router.route("/getdetails/:id").post(controller.getfullcategory);
 router.route('/getcategorywise/:category').get(controller.getcategorywise)
 router.route('/addProduct').post(controller.AddProducts)
 router.route('/delproduct/:id').delete(controller.delproduct)
+router.route("/getproduct/:id").get(controller.getProduct)
 
 // customer
 router.route('/addcustomer').post(controller.addCustomer)

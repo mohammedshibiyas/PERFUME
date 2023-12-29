@@ -179,6 +179,14 @@ export async function delproduct(req,res){
       res.status(404).send(error)
   })
 }
+
+export async function getProduct(req,res){
+  const{id}=req.params
+  console.log(id);
+  const data=await product_schema.findOne({_id:id})
+  console.log(data);
+  res.status(200).send(data)
+}
 // customer
 
 export async function addCustomer(req,res){

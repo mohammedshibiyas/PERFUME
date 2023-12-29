@@ -1,5 +1,6 @@
 import React from 'react'
-import './Productdetails.scss'
+import './ProductdetailsAdm.scss'
+import { Link } from 'react-router-dom'
 
 const Productdetails = () => {
   return (
@@ -42,12 +43,18 @@ const Productdetails = () => {
                 <div className="product-name">
                     <h5>Note 5</h5>
                 </div>
-                <div className="product-description">
+                <div className="product-title">
                     <p>Eade perfum spray</p>
+                </div>
+                <div className="product-description">
+                    <p>Irresistibly sensual, irrepressibly spirited. A sparkling, bold ambery fragrance that recalls a daring young Coco Chanel. An absolutely modern composition with a strong yet surprisingly fresh character.</p>
                 </div>
                     <div className="product-price">
                         <h6>$105</h6>
                     </div>
+                   <div className="edit-button">
+                   <Link className='edit-btn'>Edit</Link>
+                   </div>
 
                 </div>
                 

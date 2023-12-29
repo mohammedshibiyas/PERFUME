@@ -55,13 +55,14 @@ const Categoryproduct = () => {
     
    
   <div key={index}>
-  <Link className="prod-detail">
+  <Link className="prod-detail" to={`/productdetails/${data._id}`}>
     <div className=" col-lg-4 prod-1">
      
      <img src={data.banner} alt="" />
       <div className="details">
         <h5>{data.name}</h5>
-        <p>{data.description}</p>
+        <p>{data.title}</p>
+        {/* <p>{data.description}</p> */}
         <h5>{data.price}</h5>
         <Link className='delete-btn' to={`#${data._id}`} onClick={()=>delproduct(data._id)}>Delete</Link>
       </div>

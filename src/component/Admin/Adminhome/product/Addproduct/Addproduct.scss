@@ -2,6 +2,7 @@
 
 .add-product{
   body{
+    padding-bottom: 30px;
 
     font-family: 'Josefin Sans', sans-serif;
 font-family: 'Montserrat', sans-serif;
@@ -26,12 +27,17 @@ font-family: 'Poppins', sans-serif;
     align-items: center;
     justify-content: center;
     padding: 1.5rem;
+    padding-bottom: 5%;
   }
   
   .modal_main {
     display: flex;
+    margin-top: 40%;
+    
     flex-direction: column;
     width: 100%;
+    padding-bottom: 10px;
+    height: auto;
     max-width: 500px;
     background-color: #fff;
     box-shadow: 0 15px 30px 0 rgb(255, 228, 238);
@@ -42,7 +48,7 @@ font-family: 'Poppins', sans-serif;
     padding: 1rem 1.5rem;
     border-bottom: 1px solid #ddd;
     display: flex;
-    margin-top: 25%;
+    // margin-top: 50%;
     align-items: center;
     justify-content: space-between;
   }
@@ -109,12 +115,12 @@ font-family: 'Poppins', sans-serif;
   }
   
   .input + .input {
-    margin-top: 1.75rem;
+    // margin-top: 1.75rem;
   }
   
   .input__label {
     font-weight: 700;
-    font-size: 0.875rem;
+    // font-size: 0.875rem;
   }
   
   .input__field {
@@ -125,6 +131,12 @@ font-family: 'Poppins', sans-serif;
     padding: 0.75rem 0.75rem;
     transition: 0.15s ease;
   }
+ #descript{
+  height: 100px;
+ }
+ #descript::placeholder{
+  
+ }
   
   .input__field:focus {
     outline: none;

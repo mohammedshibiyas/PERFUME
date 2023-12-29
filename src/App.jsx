@@ -12,7 +12,7 @@ import Home from './component/Home/Home'
 import Categoryproduct from './component/category-vise/Categoryproduct'
 import Addcustomer from './component/User/Customerreg/Addcustomer'
 import Logincustomer from './component/User/Logincust/Logincustomer'
-import Productdetails from './component/Admin/Adminhome/product/productdetails/Productdetails'
+import Productdetails from './component/Admin/Adminhome/product/productdetails/ProductdetailsAdm'
 
 function App() {
 
