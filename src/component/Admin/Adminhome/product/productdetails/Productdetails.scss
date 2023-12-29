@@ -1,0 +1,41 @@
+.product-details{
+    .main{
+        margin-top: 4%;
+    }
+    .head h4{
+        padding-top: 4%;
+        font-family:"ABChanel Corpo Regular" ;
+        font-weight: 600;
+        text-align: center;
+    }
+    .caro{
+        width: 80%;
+    
+    }
+    .caro img{
+        width: 50%;
+    }
+    .content{
+        width: 60%;
+    }
+    .product-name {
+        border-bottom: 3px solid black;
+    }
+    .product-name h5{
+        font-family:"ABChanel Corpo Regular" ;
+        font-weight: 600;
+        font-size: 18px;
+    }
+    .product-description{
+        margin-top: 5%;
+    }
+    .product-description p{
+        font-size: small;
+    }
+    .product-price{
+        margin-top: 3%;
+    }
+    .product-price h6{
+
+    }
+}
